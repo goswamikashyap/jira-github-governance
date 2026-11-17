@@ -41,4 +41,12 @@ text ├── .github/workflows/ │   └── governance.yml      # CI valid
   "timestamp_utc": "20261117T121000Z"
 }
 ```
+## Live Proof of Execution
+1. GitHub Actions run (governance-and-audit with all 4 steps expanded).
+<img width="1280" height="688" alt="1" src="https://github.com/user-attachments/assets/150ed8c8-d33a-4bd2-9950-522d0df00be3" />
+2. Jira SCRUM-13 ticket showing the automated "Automated Governance Check Passed.
+   <img width="1280" height="685" alt="2" src="https://github.com/user-attachments/assets/f4619fb3-a4f9-42d1-bc7c-e27499361615" />
+3. AWS S3 audit-logs
+   <img width="1280" height="562" alt="3" src="https://github.com/user-attachments/assets/e85b8417-afaf-4857-bca9-d026fbf5ba43" />
 
+   
