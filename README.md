@@ -1,4 +1,3 @@
-# Jira-GitHub Governance Automation
 # Jira-GitHub Governance & Compliance Automation
 
 Automated DevSecOps governance pipeline that enforces Jira ticket traceability on every commit, syncs deployment metadata to Jira issues, and archives immutable JSON audit logs in AWS S3.
@@ -10,4 +9,36 @@ Automated DevSecOps governance pipeline that enforces Jira ticket traceability o
 4. **Immutable S3 Audit Trail:** Generates a structured JSON compliance record for every passing build and uploads it to a private AWS S3 bucket.
 
 ## Repository Structure
+text ├── .github/workflows/ │   └── governance.yml      # CI validation, Jira REST API sync, and S3 upload ├── scripts/ │   ├── commit-msg          # Regex-based Git commit-message hook │   └── install-hooks.sh    # One-click local Git hook installer └── README.md 
+
+## Quick Start
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd jira-github-governance
+   ```
+2. **Activate the local Jira governance hook:**
+   ```bash
+   chmod +x scripts/install-hooks.sh && ./scripts/install-hooks.sh
+   ```
+3. **Configure GitHub Repository Secrets:**
+   Add the following secrets under **Settings → Secrets and variables → Actions**:
+   - `JIRA_BASE_URL`
+   - `JIRA_EMAIL`
+   - `JIRA_API_TOKEN`
+   - `AWS_ACCESS_KEY_ID`
+   - `AWS_SECRET_ACCESS_KEY`
+   - `AWS_S3_BUCKET`
+
+## Sample S3 Compliance Audit Record
+```json
+{
+  "jira_ticket": "SCRUM-13",
+  "commit_sha": "3a19cd58b7f210c4d9e1a0b34c567890abcdef12",
+  "author": "goswamikashyap",
+  "repository": "goswamikashyap/jira-github-governance",
+  "status": "COMPLIANT",
+  "timestamp_utc": "20261117T121000Z"
+}
+```
 
