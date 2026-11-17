@@ -14,7 +14,7 @@ text ├── .github/workflows/ │   └── governance.yml      # CI valid
 ## Quick Start
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/goswamikashyap/jira-github-governance.git
    cd jira-github-governance
    ```
 2. **Activate the local Jira governance hook:**
