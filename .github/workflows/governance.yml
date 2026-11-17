@@ -20,7 +20,7 @@ jobs:
           COMMIT_MSG="${{ github.event.head_commit.message }}"
           echo "Checking commit: $COMMIT_MSG"
           if [[ "$COMMIT_MSG" =~ ^(SCRUM-[0-9]+): ]]; then
-            JIRA_KEY="${BASH_REMATCH}"
+            JIRA_KEY="${BASH_REMATCH[1]}"
             echo "jira_key=$JIRA_KEY" >> $GITHUB_OUTPUT
             echo "✅ Validated Jira Ticket: $JIRA_KEY"
           else
