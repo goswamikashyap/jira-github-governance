@@ -34,11 +34,11 @@ text ├── .github/workflows/ │   └── governance.yml      # CI valid
 ```json
 {
   "jira_ticket": "SCRUM-13",
-  "commit_sha": "3a19cd58b7f210c4d9e1a0b34c567890abcdef12",
+  "commit_sha": "c3e8b0abf0033851cf32537de0a607af6e11be7d",
   "author": "goswamikashyap",
   "repository": "goswamikashyap/jira-github-governance",
   "status": "COMPLIANT",
-  "timestamp_utc": "20261117T121000Z"
+  "timestamp_utc": "20261117T132159Z"
 }
 ```
 ## Live Proof of Execution
