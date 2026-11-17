@@ -1,0 +1,21 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Require commits to start with a Jira key like SCRUM-13: description
+JIRA_REGEX="^SCRUM-[0-9]+: .+"
+
+if [[ ! "$COMMIT_MSG" =~ $JIRA_REGEX ]]; then
+    echo "========================================================="
+    echo "❌ GOVERNANCE BLOCKED: Missing Jira Ticket ID"
+    echo "Format required: SCRUM-<number>: <commit description>"
+    echo "Example: SCRUM-13: add deployment audit workflow"
+    echo "Your message: '$COMMIT_MSG'"
+    echo "========================================================="
+    exit 1
+fi
+
+echo "✅ Governance check passed: Linked to Jira ticket."
+exit 0
+
